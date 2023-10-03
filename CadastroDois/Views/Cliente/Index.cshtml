@@ -1,0 +1,33 @@
+﻿@model List<ClienteModel>;
+
+<div class="text-center">
+    <h1 class="display-4">Lista de Clientes</h1>
+
+    <div class="align-content-sm-start">
+        <a class="btn btn-primary" role="button" asp-controller="Cliente" asp-action="Index">Adicionar Novo Contato</a>
+    </div>
+
+    <table class="table caption-top">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Email</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Data de Cadastro</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Nome</td>
+                    <td>@item.Email</td>
+                    <td>@item.Idade</td>
+                    <td>@item.DatadeCadastro</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
